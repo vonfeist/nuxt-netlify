@@ -29,7 +29,7 @@ export default function Product({ product }) {
               ${ product.price }
             </p>
             <p>
-              Button
+              <Button
                 className="snipcart-add-item"
                 data-item-id={product.id}
                 data-item-price={product.price}
