@@ -42,7 +42,16 @@ export default function Home() {
           <span>
             $0.00
           </span>
-          <Button>View Cart</Button>
+           <Button
+              className="snipcart-add-item"
+              data-item-id={product.id}
+              data-item-price={product.price}
+              data-item-url={`/product/${product.id}`}
+              data-item-image={product.image}
+              data-item-name={product.title}
+            >
+              Add to Cart
+            </Button>
         </p>
 
         <h2 className="sr-only">Available Cards</h2>
