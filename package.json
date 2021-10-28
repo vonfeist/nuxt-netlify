@@ -1,11 +1,11 @@
 {
-  "name": "my-ecommerce-app",
+  "name": "Nuxt Netlify",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Colby Fayock",
-    "email": "hello@colbyfayock.com",
-    "url": "https://twitter.com/colbyfayock"
+    "name": "Pia Fornfeist",
+    "email": "vonfeist@posteo.de",
+    "url": "https://twitter.com/vonfeist"
   },
   "license": "MIT",
   "scripts": {
