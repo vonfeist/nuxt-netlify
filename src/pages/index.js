@@ -20,43 +20,23 @@ export default function Home() {
       <Head>
         <title>Hyper Bros Trading</title>
         <meta name="description" content="Your favorite trading cards delivered!" />
-        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
-        <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"></script>
-        <div id="snipcart" data-config-modal-style="side" data-api-key="NjZjOGU3NDItNTI3Ni00MjU0LTliNWEtODM1YWUxZDc0Y2UwNjM3NzA5MzczNjI0NDU0MzI3" hidden></div>
       </Head>
 
       <Container>
         <h1 className="sr-only">Hyper Bros. Trading Cards</h1>
 
-        {/* <div className={styles.discover}>
+        <div className={styles.discover}>
           <div className={styles.search}>
             <h2>Search</h2>
             <form>
               <input onChange={handleOnSearch} type="search" />
             </form>
           </div>
-        </div> */}
-
-        <p className={styles.cart}>
-          <FaShoppingCart />
-          <span>
-            $0.00
-          </span>
-           <Button
-              className="snipcart-add-item"
-              data-item-id={product.id}
-              data-item-price={product.price}
-              data-item-url={`/product/${product.id}`}
-              data-item-image={product.image}
-              data-item-name={product.title}
-            >
-              Add to Cart
-            </Button>
-        </p>
+        </div>
 
         <h2 className="sr-only">Available Cards</h2>
         <ul className={styles.products}>
-          {products.map(product => {
+          {activeProducts.map(product => {
             return (
               <li key={product.id}>
                 <Link href={`/products/${product.id}`}>
@@ -73,7 +53,16 @@ export default function Home() {
                   </a>
                 </Link>
                 <p>
-                  <Button>Add to Cart</Button>
+                  <Button
+                    className="snipcart-add-item"
+                    data-item-id={product.id}
+                    data-item-price={product.price}
+                    data-item-url={`/product/${product.id}`}
+                    data-item-image={product.image}
+                    data-item-name={product.title}
+                  >
+                    Add to Cart
+                  </Button>
                 </p>
               </li>
             )
