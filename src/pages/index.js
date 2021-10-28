@@ -1,7 +1,8 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import { useState } from 'react';
+import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link';
-import { FaShoppingCart } from 'react-icons/fa';
+import Fuse from 'fuse.js'
 
 import Layout from '@components/Layout';
 import Container from '@components/Container';
@@ -12,9 +13,27 @@ import products from '@data/products.json';
 import styles from '@styles/Home.module.scss'
 
 export default function Home() {
-  // function handleOnSearch() {
-  //   // Do something here
-  // }
+  const [query, setQuery] = useState();
+
+  let activeProducts = products;
+
+  const fuse = new Fuse(activeProducts, {
+    keys: [
+      'title',
+      'allegiance'
+    ]
+  });
+
+  if ( query ) {
+    const results = fuse.search(query);
+    activeProducts = results.map(({ item }) => item);
+  }
+
+  function handleOnSearch(event) {
+    const value = event.currentTarget.value;
+    setQuery(value);
+  }
+
   return (
     <Layout>
       <Head>
