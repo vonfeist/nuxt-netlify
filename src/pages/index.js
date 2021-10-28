@@ -20,6 +20,9 @@ export default function Home() {
       <Head>
         <title>Hyper Bros Trading</title>
         <meta name="description" content="Your favorite trading cards delivered!" />
+        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
+        <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"></script>
+        <div id="snipcart" data-config-modal-style="side" data-api-key="NjZjOGU3NDItNTI3Ni00MjU0LTliNWEtODM1YWUxZDc0Y2UwNjM3NzA5MzczNjI0NDU0MzI3" hidden></div>
       </Head>
 
       <Container>
